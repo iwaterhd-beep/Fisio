@@ -88,7 +88,7 @@
         tags: ["Ecografía", "Invasiva ecoguiada", "Readaptación"],
       },
       {
-        initial: "P",
+        initial: "F",
         name: "Francisco",
         role: "Fisioterapeuta",
         bio: "Destacado una y otra vez por los pacientes por su amabilidad, cercanía y profesionalidad. Acompaña tu evolución sesión a sesión, adaptando cada tratamiento a tus necesidades.",
