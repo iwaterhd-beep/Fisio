@@ -528,8 +528,9 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); line-height: 1
   gap: 40px;
   padding-bottom: 50px;
 }
-.footer__logo { display: inline-block; }
-.footer__logo img { width: 190px; max-width: 100%; height: auto; }
+.brand--footer { color: #fff; }
+.brand--footer .brand__sub { color: rgba(255,255,255,.55); }
+.brand--footer .brand__logo { border-radius: 10px; }
 .footer__about { margin-top: 18px; font-size: .92rem; max-width: 300px; }
 .footer__social { display: flex; gap: 12px; margin-top: 20px; }
 .footer__social a {
