@@ -89,7 +89,7 @@
       },
       {
         initial: "P",
-        name: "Paco",
+        name: "Francisco",
         role: "Fisioterapeuta",
         bio: "Destacado una y otra vez por los pacientes por su amabilidad, cercanía y profesionalidad. Acompaña tu evolución sesión a sesión, adaptando cada tratamiento a tus necesidades.",
         tags: ["Terapia manual", "Osteopatía", "Seguimiento"],
