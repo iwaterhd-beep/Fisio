@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Panel de administración | AC Fisioterapia Avanzada</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- ===================== LOGIN ===================== -->
+  <div class="login-wrap" id="loginWrap">
+    <form class="login-card" id="loginForm" autocomplete="off">
+      <img class="login-card__logo" src="assets/favicon.png" alt="" />
+      <h1>Panel de administración</h1>
+      <p>AC Fisioterapia Avanzada</p>
+      <div class="field">
+        <label for="pwd">Contraseña</label>
+        <input type="password" id="pwd" autocomplete="current-password" />
+      </div>
+      <div class="login-error" id="loginError"></div>
+      <button type="submit" class="btn btn--primary" style="width:100%">Entrar</button>
+      <p class="login-hint">Acceso local en este navegador. Contraseña por defecto: <strong>ac-admin</strong> (cámbiala en <code>js/admin.js</code>).</p>
+    </form>
+  </div>
+
+  <!-- ===================== ADMIN ===================== -->
+  <div class="admin" id="admin">
+    <header class="admin-top">
+      <div class="admin-top__inner">
+        <span class="admin-brand">
+          <img src="assets/favicon.png" alt="" />
+          <span><strong>AC Admin</strong><span>Panel de contenido</span></span>
+        </span>
+        <div class="admin-top__actions">
+          <a href="index.html" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Ver web ↗</a>
+          <button type="button" class="btn btn--sm" id="logoutBtn" style="background:#fff;color:var(--ink);border-color:var(--line)">Salir</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-main">
+      <nav class="admin-tabs" id="tabs">
+        <button type="button" class="admin-tab is-active" data-tab="contacto"><span class="admin-tab__ic">🏥</span> Datos y stats</button>
+        <button type="button" class="admin-tab" data-tab="horario"><span class="admin-tab__ic">🕐</span> Horario</button>
+        <button type="button" class="admin-tab" data-tab="servicios"><span class="admin-tab__ic">🩺</span> Servicios</button>
+        <button type="button" class="admin-tab" data-tab="equipo"><span class="admin-tab__ic">👥</span> Equipo</button>
+        <button type="button" class="admin-tab" data-tab="opiniones"><span class="admin-tab__ic">⭐</span> Opiniones</button>
+        <button type="button" class="admin-tab" data-tab="faq"><span class="admin-tab__ic">❓</span> FAQ</button>
+        <button type="button" class="admin-tab" data-tab="imagenes"><span class="admin-tab__ic">🖼️</span> Imágenes</button>
+        <button type="button" class="admin-tab" data-tab="datos"><span class="admin-tab__ic">💾</span> Copias</button>
+      </nav>
+
+      <div class="admin-content">
+        <!-- DATOS Y STATS -->
+        <section class="admin-panel is-active" data-panel="contacto">
+          <div class="panel-head">
+            <h2>Datos de contacto y estadísticas</h2>
+            <p>Se actualizan en toda la web (cabecera, pie y página de contacto).</p>
+          </div>
+          <div class="card">
+            <div class="card__head"><h3>Contacto</h3></div>
+            <div class="grid-2">
+              <div class="field">
+                <label for="ac-phoneDisplay">Teléfono (visible corto)</label>
+                <input type="text" id="ac-phoneDisplay" />
+              </div>
+              <div class="field">
+                <label for="ac-phoneIntl">Teléfono (con prefijo)</label>
+                <input type="text" id="ac-phoneIntl" />
+              </div>
+              <div class="field">
+                <label for="ac-phoneRaw">Teléfono para enlace (tel:)</label>
+                <input type="text" id="ac-phoneRaw" placeholder="+34664685266" />
+              </div>
+              <div class="field">
+                <label for="ac-whatsapp">WhatsApp (solo números)</label>
+                <input type="text" id="ac-whatsapp" placeholder="34664685266" />
+              </div>
+              <div class="field">
+                <label for="ac-email">Email</label>
+                <input type="text" id="ac-email" />
+              </div>
+              <div class="field">
+                <label for="ac-address">Dirección</label>
+                <input type="text" id="ac-address" />
+              </div>
+              <div class="field">
+                <label for="ac-city">Código postal y ciudad</label>
+                <input type="text" id="ac-city" />
+              </div>
+              <div class="field">
+                <label for="ac-instagram">Instagram (URL)</label>
+                <input type="text" id="ac-instagram" placeholder="https://www.instagram.com/usuario/" />
+              </div>
+              <div class="field">
+                <label for="ac-facebook">Facebook (URL, opcional)</label>
+                <input type="text" id="ac-facebook" placeholder="https://www.facebook.com/..." />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__head"><h3>Estadísticas</h3></div>
+            <div class="grid-2">
+              <div class="field">
+                <label for="ac-rating">Valoración media</label>
+                <input type="text" id="ac-rating" placeholder="4,9" />
+              </div>
+              <div class="field">
+                <label for="ac-reviewsCount">Número de reseñas</label>
+                <input type="text" id="ac-reviewsCount" placeholder="107" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- HORARIO -->
+        <section class="admin-panel" data-panel="horario">
+          <div class="panel-head">
+            <h2>Horario</h2>
+            <p>Aparece en el pie de página de todas las secciones.</p>
+          </div>
+          <div id="hoursList"></div>
+          <button type="button" class="add-btn" data-add="hours">+ Añadir fila</button>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="admin-panel" data-panel="servicios">
+          <div class="panel-head">
+            <h2>Servicios</h2>
+            <p>Tarjetas de la página de servicios y opciones del formulario de cita.</p>
+          </div>
+          <div id="servicesList"></div>
+          <button type="button" class="add-btn" data-add="services">+ Añadir servicio</button>
+        </section>
+
+        <!-- EQUIPO -->
+        <section class="admin-panel" data-panel="equipo">
+          <div class="panel-head">
+            <h2>Equipo</h2>
+            <p>Tarjetas de la página "La clínica".</p>
+          </div>
+          <div id="teamList"></div>
+          <button type="button" class="add-btn" data-add="team">+ Añadir miembro</button>
+        </section>
+
+        <!-- OPINIONES -->
+        <section class="admin-panel" data-panel="opiniones">
+          <div class="panel-head">
+            <h2>Opiniones</h2>
+            <p>Reseñas que se muestran en la página de opiniones.</p>
+          </div>
+          <div id="reviewsList"></div>
+          <button type="button" class="add-btn" data-add="reviews">+ Añadir opinión</button>
+        </section>
+
+        <!-- FAQ -->
+        <section class="admin-panel" data-panel="faq">
+          <div class="panel-head">
+            <h2>Preguntas frecuentes</h2>
+            <p>Se muestran en la página de contacto.</p>
+          </div>
+          <div id="faqList"></div>
+          <button type="button" class="add-btn" data-add="faq">+ Añadir pregunta</button>
+        </section>
+
+        <!-- IMÁGENES -->
+        <section class="admin-panel" data-panel="imagenes">
+          <div class="panel-head">
+            <h2>Imágenes</h2>
+            <p>Sube una foto nueva (se optimiza automáticamente) o pega la URL de una imagen.</p>
+          </div>
+          <div class="card">
+            <div class="card__head"><h3>Imagen principal (portada / hero)</h3></div>
+            <div id="imgHero"></div>
+          </div>
+          <div class="card">
+            <div class="card__head"><h3>Imagen de "La clínica"</h3></div>
+            <div id="imgAbout"></div>
+          </div>
+          <div class="panel-head" style="margin-top:6px">
+            <h2 style="font-size:1.15rem">Galería de instalaciones</h2>
+            <p>Las fotos de la página de instalaciones.</p>
+          </div>
+          <div id="galleryList"></div>
+          <button type="button" class="add-btn" data-add="gallery">+ Añadir foto</button>
+          <p class="muted-note" style="margin-top:12px">Cada imagen subida se redimensiona y comprime para no saturar el almacenamiento del navegador (límite ~5 MB en total). Si tienes muchas fotos grandes, usa URLs en lugar de subirlas.</p>
+        </section>
+
+        <!-- COPIAS -->
+        <section class="admin-panel" data-panel="datos">
+          <div class="panel-head">
+            <h2>Copias de seguridad</h2>
+            <p>Los cambios se guardan en este navegador. Exporta un archivo para conservarlos o pasarlos a otro dispositivo.</p>
+          </div>
+          <div class="card">
+            <div class="card__head"><h3>Exportar / Importar</h3></div>
+            <p class="muted-note">Exportar descarga un archivo <strong>contenido.json</strong> con todo el contenido actual. Importar lo carga desde un archivo previamente exportado.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+              <button type="button" class="btn btn--primary btn--sm" id="exportBtn">⬇ Exportar JSON</button>
+              <button type="button" class="btn btn--outline btn--sm" id="importBtn">⬆ Importar JSON</button>
+              <input type="file" id="importFile" accept="application/json,.json" hidden />
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__head"><h3>Restablecer</h3></div>
+            <p class="muted-note">Borra todos los cambios guardados y vuelve al contenido original del sitio.</p>
+            <div style="margin-top:16px">
+              <button type="button" class="btn btn--sm" id="resetBtn" style="background:#fff;color:#e0584f;border-color:#f3c4bf">↺ Restablecer contenido original</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="save-bar" id="saveBar">
+      <div class="save-bar__inner">
+        <span class="save-bar__text"><strong>Cambios sin guardar.</strong> Recuerda guardar para aplicarlos a la web.</span>
+        <div class="save-bar__actions">
+          <button type="button" class="btn btn--outline btn--sm" id="discardBtn">Descartar</button>
+          <button type="button" class="btn btn--primary btn--sm" id="saveBtn">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="js/site-data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

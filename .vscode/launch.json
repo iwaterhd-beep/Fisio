@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Web · Inicio (index.html)",
+      "url": "http://localhost:8080/index.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "servidor-web",
+      "sourceMaps": true
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Web · Panel admin",
+      "url": "http://localhost:8080/admin.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "servidor-web",
+      "sourceMaps": true
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Web · Contacto (formulario)",
+      "url": "http://localhost:8080/contacto.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "servidor-web",
+      "sourceMaps": true
+    }
+  ]
+}
